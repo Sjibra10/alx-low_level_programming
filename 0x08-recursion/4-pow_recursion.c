@@ -21,7 +21,6 @@ int _pow_recursion(int x, int y)
 	else
 	{
 		return (x * _pow_recursion(x, y - 1));
-		/**its like x ^ y -1) until x ^ 0 = 1*/
 	}
 return (0);
 }
