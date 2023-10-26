@@ -25,11 +25,11 @@ return (real_prime_number(n, n - 1));
 
 int real_prime_number(int n, int t)
 {
-	if (t == 1) /**it will return 1 as 1 is a prime number*/
+	if (t == 1)
 	{
 		return (1);
 	}
-	if (n % t == 0 && t > 0) /**if remainder is 0 and is > return 0*/
+	if (n % t == 0 && t > 0)
 	{
 		return (0);
 	}
