@@ -11,7 +11,7 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 	{
-		return (-1); /**error*/
+		return (-1);
 	}
 	return (new_sqrt_recursion(n, 0));
 }
@@ -29,9 +29,9 @@ int new_sqrt_recursion(int n, int t)
 	{
 	return (-1);
 	}
-	if (t * t == n) /**gives t ^ 2 = 0*/
+	if (t * t == n)
 	{
-		return (t); /**returns the positive interger*/
+		return (t);
 	}
 	return (new_sqrt_recursion(n, t + 1));
 }
