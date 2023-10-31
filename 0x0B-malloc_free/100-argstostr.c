@@ -17,10 +17,9 @@ char *argstostr(int ac, char **av)
 
 	for (r = 0; r < ac; r++) /**lenght of ac*/
 	{
-		for (t = 0; av[r][t] != 0; t++) /**combining index*/
+		for (t = 0; av[r][t] != 0; t++)
 			count++;
 		count++;
-		/**creating space*/
 	}
 	result = malloc(sizeof(char) * count + 1);
 	if (result == NULL)
@@ -32,10 +31,8 @@ char *argstostr(int ac, char **av)
 		{
 			result[p] = av[r][t];
 			p++;
-			/**concatenate & storing each character in result*/
 		}
 	result[p++] = '\n';
-	/**beforen r++ create new line*/
 	}
 result[p] = '\0';
 return (result);
