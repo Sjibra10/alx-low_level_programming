@@ -17,14 +17,14 @@ int _atoi(char *s)
 	int f = 0;
 	int num = 0;
 
-	while (s[length] != '\0') /**length of the string*/
+	while (s[length] != '\0')
 		length++;
 	while (a < length && f == 0)
 	{
-		if (s[a] == '-') /**finds - using counter*/
+		if (s[a] == '-')
 			++counter;
 
-		if (s[a] >= '0' && s[a] <= '9') /**goes through ASCII to find intergers*/
+		if (s[a] >= '0' && s[a] <= '9')
 		{
 			num = s[a] - '0';
 			if (counter % 2)
