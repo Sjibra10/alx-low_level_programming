@@ -1,39 +1,44 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+/**
+ * _strlen - Returns the length of a string.
+ * @s: The string whose the length will be returned.
+ * Return: The length of s.
+ */
+int _strlen(char *s)
+{
+	if (*s == 0)
+		return (0);
+	else
+		return (1 + _strlen(s + 1));
+}
 
 /**
- * argstostr - concatenates all arguements of a function
- * @ac: first tring
- * @av: pionter pointed to string
- * Return: pointer to new string or NULL
+ * argstostr - Concatenates all the arguments.
+ * @ac: The number of arguments.
+ * @av: The arguments array.
+ * Return: A string of arguments, each followed by \n.
+ *	   NULL id ac == 0 or av == NULL.
  */
-
 char *argstostr(int ac, char **av)
 {
-	int r, t, p = 0;
-	int count = 0;
-	char *result;
+	int i = 0, j = 0, k = 0, n = 0;
+	char *res = NULL;
 
-	for (r = 0; r < ac; r++) /**lenght of ac*/
+	if (ac != 0 && av != NULL)
 	{
-		for (t = 0; av[r][t] != 0; t++)
-			count++;
-		count++;
-	}
-	result = malloc(sizeof(char) * count + 1);
-	if (result == NULL)
-		return (NULL);
-
-	for (r = 0; r < ac; r++)
-	{
-		for (t = 0; av[r][t] != '\0'; t++)
+		for (i = 0; i < ac; i++)
+			n += _strlen(av[i]);
+		res = malloc((ac + n + 1) * sizeof(char));
+		if (res != NULL)
 		{
-			result[p] = av[r][t];
-			p++;
+			for (i = 0; i < ac; i++)
+			{
+				n = _strlen(av[i]);
+				for (j = 0; j < n; j++)
+					res[k++] = av[i][j];
+				res[k++] = '\n';
+			}
 		}
-	result[p++] = '\n';
 	}
-result[p] = '\0';
-return (result);
+	return (res);
 }
