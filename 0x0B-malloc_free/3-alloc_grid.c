@@ -18,23 +18,21 @@ int **alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	result = malloc(sizeof(int *) * height); /**memory allocation for rows*/
+	result = malloc(sizeof(int *) * height);
 
 	if (result == NULL)
 		return (NULL);
 
-	for (r = 0; r < height; r++) /**finding rows length*/
+	for (r = 0; r < height; r++)
 	{
 		result[r] = malloc(sizeof(int) * width);
-		/**allocating height to width to store rows*/
 
 		if (result[r] == NULL)
-		{	/**freeing space taken by height*/
+		{
 			free(result);
 			for (t = 0; t <= height; t++)
 				free(result[r]);
 		}
-		/**start indexing at 0 matching column and rows*/
 		for (t = 0; t < width; t++)
 			result[r][t] = 0;
 	}
