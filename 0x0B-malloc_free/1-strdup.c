@@ -18,12 +18,12 @@ char *_strdup(char *str)
 		return (NULL);
 	for (r = 0; str[r] != '\0'; r++)
 		count++;
-	newmemo = malloc(sizeof(char) * count + 1); /**copies until null terminator*/
+	newmemo = malloc(sizeof(char) * count + 1);
 
 	if (newmemo == NULL)
 		return (NULL);
 	for (r = 0; str[r] != 0; r++)
-		newmemo[r] = str[r]; /**copies every new memory index to str*/
+		newmemo[r] = str[r];
 
 	return (newmemo);
 }
