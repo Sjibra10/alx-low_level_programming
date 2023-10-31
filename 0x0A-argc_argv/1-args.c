@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-(void) argv; /**it ignores argv array*/
+(void) argv;
 
 	printf("%d\n", argc - 1);
 
