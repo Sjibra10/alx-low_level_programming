@@ -7,9 +7,9 @@
  * make change for an amount of money
  * @argc: number of arguments
  * @argv: array of arguments
- *
  * Return: 0 (Success), 1 (Error)
  */
+
 int main(int argc, char *argv[])
 {
 	int num, r, output;
@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	for (r = 0; r < 5 && num >= 0; r++) /**lenghth of string until num > 0*/
+	for (r = 0; r < 5 && num >= 0; r++)
 	{
-		while (num >= coins[r]) /**index of num inserted in coins*/
+		while (num >= coins[r])
 		{
 			output++;
 			num -= coins[r];
