@@ -17,12 +17,12 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 
-	allocation = malloc(sizeof(char) * size); /**multiples char by sie*/
+	allocation = malloc(sizeof(char) * size);
 
 	if (allocation == NULL)
 		return (NULL);
 
-	for (r = 0; r < size; r++) /**allocates every memory index of r to c*/
+	for (r = 0; r < size; r++)
 		allocation[r] = c;
 
 	return (allocation);
